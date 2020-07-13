@@ -1,16 +1,15 @@
 package p455w0rd.fmagnet.items;
 
+import javafx.scene.control.TextFormatter;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.client.resource.language.I18n;
-import net.minecraft.client.util.TextFormat;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.text.LiteralText;
 import net.minecraft.text.Text;
 import net.minecraft.text.TranslatableText;
 import net.minecraft.util.ActionResult;
@@ -46,7 +45,7 @@ public class ItemMagnet extends Item {
 
     @Override
     @Environment(EnvType.CLIENT)
-    public boolean hasEnchantmentGlint(ItemStack magnet) {
+    public boolean hasGlint(ItemStack magnet) {
         return isActive(magnet);
     }
 
@@ -100,14 +99,6 @@ public class ItemMagnet extends Item {
 
         public boolean getBoolean() {
             return state;
-        }
-
-        public String getUnlocalizedMode() {
-            return "tooltip.fmagnet." + (getBoolean() ? "" : "in") + "active";
-        }
-
-        public String getLocalizedMode() {
-            return (getBoolean() ? TextFormat.GREEN.toString() : TextFormat.RED.toString()) + I18n.translate(getUnlocalizedMode());
         }
 
     }

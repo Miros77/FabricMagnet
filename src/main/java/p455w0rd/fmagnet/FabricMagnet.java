@@ -29,9 +29,9 @@ public class FabricMagnet implements ModInitializer {
         List<ServerPlayerEntity> playerList = server.getPlayerManager().getPlayerList();
         for (ServerPlayerEntity player : playerList) {
             PlayerInventory inv = player.inventory;
-            for (int i = 0; i < inv.getInvSize(); i++) {
-                if (inv.getInvStack(i).getItem() == ModItems.MAGNET) {
-                    ItemStack magnetStack = inv.getInvStack(i);
+            for (int i = 0; i < inv.size(); i++) {
+                if (inv.getStack(i).getItem() == ModItems.MAGNET) {
+                    ItemStack magnetStack = inv.getStack(i);
                     ItemMagnet magnet = (ItemMagnet) magnetStack.getItem();
                     if (magnet.isActive(magnetStack)) {
                         List<ItemEntity> entityItems = player.getServerWorld().getEntities(ItemEntity.class, player.getBoundingBox().expand(16.0D), EntityPredicates.VALID_ENTITY);
