@@ -1,7 +1,7 @@
 package p455w0rd.fmagnet;
 
 import net.fabricmc.api.ModInitializer;
-import net.fabricmc.fabric.events.TickEvent;
+import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.minecraft.entity.ItemEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.item.ItemStack;
@@ -20,7 +20,7 @@ public class FabricMagnet implements ModInitializer {
     @Override
     public void onInitialize() {
         ModItems.register();
-        TickEvent.SERVER.register(minecraftServer -> {
+        ServerTickEvents.START_SERVER_TICK.register(minecraftServer -> {
             FabricMagnet.INSTANCE.doMagnet(minecraftServer);
         });
     }
@@ -37,7 +37,7 @@ public class FabricMagnet implements ModInitializer {
                         List<ItemEntity> entityItems = player.getServerWorld().getEntities(ItemEntity.class, player.getBoundingBox().expand(16.0D), EntityPredicates.VALID_ENTITY);
                         for (ItemEntity entityItemNearby : entityItems) {
                             if (!player.isSneaking()) {
-                                entityItemNearby.method_5694(player);
+                                entityItemNearby.onPlayerCollision(player);
                             }
                         }
                     }

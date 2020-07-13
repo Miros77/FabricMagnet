@@ -1,6 +1,5 @@
 {
 	"item.fmagnet.magnet" : "Fabric Magnet",
-	"tooltip.fmagnet.mode" : "Mode",
-	"tooltip.fmagnet.active" : "Active",
-	"tooltip.fmagnet.inactive" : "Inactive"
+	"tooltip.fmagnet.mode.ACTIVE" : "Mode: Active",
+	"tooltip.fmagnet.mode.INACTIVE" : "Mode: Inactive"
 }

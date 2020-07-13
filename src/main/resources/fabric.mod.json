@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "id": "fmagnet",
+  "name": "Fabric Magnet",
+  "version": "${version}",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "p455w0rd.fmagnet.FabricMagnet"
+    ]
+  }
+}
