@@ -1,0 +1,5 @@
+{
+	"item.fmagnet.magnet" : "Fabric Магнит",
+	"tooltip.fmagnet.mode.ACTIVE" : "Режим: Активний",
+	"tooltip.fmagnet.mode.INACTIVE" : "Режим: Отключён"
+}
